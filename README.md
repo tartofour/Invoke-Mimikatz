@@ -1,16 +1,15 @@
 # Invoke-Mimikatz
 Updated version of Invoke-Mimikatz that runs on Windows 11.
-The encoded mimikatz DLLs stored in PEBytes64 and PEBytes32 have been updated as well to contain a mimikatz version that runs on Windows 11 (https://github.com/ebalo55/mimikatz/tree/main).
 
 1. Download Invoke-Mimikatz.ps1 from the PowerShellMafia repo (https://github.com/PowerShellMafia/PowerSploit/blob/master/Exfiltration/Invoke-Mimikatz.ps1).
 2. Change the following line:
 `$GetProcAddress = $UnsafeNativeMethods.GetMethod('GetProcAddress')` to `$GetProcAddress = $UnsafeNativeMethods.GetMethod('GetProcAddress', [reflection.bindingflags] "Public,Static", $null, [System.Reflection.CallingConventions]::Any, @((New-Object System.Runtime.InteropServices.HandleRef).GetType(), [string]), $null);`
 
-3. Clone the mimikatz repo from ebalo55.
+3. Clone the mimikatz repo from ebalo55 (https://github.com/ebalo55/mimikatz/tree/main).
 4. Open the project in VSCode.
 5. Select "Second_Release_PowerShell" and build the project.
-6. Base64 encode Win32/powerkatz.dll and x64/powerkatz.dll.
-7. Replace the content of the PEBytes64 and PEBytes32 variable with base64 encoded payloads.
+6. Base64 encode `Win32/powerkatz.dll` and `x64/powerkatz.dll`.
+7. Replace the content of the `PEBytes64` and `PEBytes32` variables with base64 encoded payloads.
 
 How to use:
 
